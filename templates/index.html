@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>CyberArena</title>
 
@@ -11,31 +12,53 @@
 
 <body>
 
+<!-- SIDEBAR -->
+
 <div class="sidebar">
-<a href="/phishing">Phishing Simulator</a>
-<a href="/steganography">Steganography Lab</a>
-<a href="/threat-map">Threat Map</a>
-<a href="/ai-analyzer">AI Threat Analyzer</a>
-<a href="/leaderboard">Leaderboard</a>
-    <h2>CyberArena</h2>
+
+    <h2>@omu47</h2>
 
     <a href="/">Dashboard</a>
+
     <a href="/base64">Base64 Lab</a>
+
     <a href="/rsa">RSA Demo</a>
 
+    <a href="/phishing">Phishing Simulator</a>
+
+    <a href="/steganography">Steganography Lab</a>
+
+    <a href="/threat-map">Threat Map</a>
+
+    <a href="/ai-analyzer">AI Threat Analyzer</a>
+
+    <a href="/leaderboard">Leaderboard</a>
+    <a href="/login">Login</a>
+
+<a href="/register">Register</a>
 </div>
+
+<!-- MAIN CONTENT -->
 
 <div class="main-content">
 
-    <div class="topbar">
+    <!-- TOPBAR -->
 
-        <h1>Threat Dashboard</h1>
+    <div class="topbar">
 
         <div class="status">
             SYSTEM STATUS: SECURE
         </div>
 
     </div>
+
+    <!-- LOGO -->
+
+    <h1 class="logo-title">
+        CyberArena
+    </h1>
+
+    <!-- STATS -->
 
     <div class="stats-grid">
 
@@ -54,12 +77,9 @@
             <p>19</p>
         </div>
 
-        <div class="stat-card">
-            <h3>Security Score</h3>
-            <p>94%</p>
-        </div>
-
     </div>
+
+    <!-- TERMINAL + ACTIVITY -->
 
     <div class="dashboard-grid">
 
@@ -91,41 +111,25 @@
     </div>
 
 </div>
-<div class="stat-card">
 
-    <h3>User Rank</h3>
+<!-- MATRIX EFFECT -->
 
-    <p>
-        {% if current_user.is_authenticated %}
-            {{ current_user.rank }}
-        {% else %}
-            Guest
-        {% endif %}
-    </p>
-
-</div>
-<div class="stat-card">
-
-    <h3>XP Points</h3>
-
-    <p>
-        {% if current_user.is_authenticated %}
-            {{ current_user.xp }}
-        {% else %}
-            0
-        {% endif %}
-    </p>
-
-</div>
-<script src="{{ url_for('static', filename='js/app.js') }}"></script>
 <canvas id="matrix"></canvas>
-<script
-src="{{ url_for('static', filename='js/matrix.js') }}">
-</script>
-</body>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/matrix.js') }}"></script>
+
+<!-- FOOTER -->
+
 <footer class="footer">
+
     <span class="glow-text">
-        Crafted with ❤️ by Uma Shankar 
+        Crafted with ❤️ by Uma Shankar
     </span>
+
 </footer>
+
+</body>
+
 </html>
