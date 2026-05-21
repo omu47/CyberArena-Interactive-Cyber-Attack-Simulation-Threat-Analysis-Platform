@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>AI Threat Analyzer</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<div class="main-content">
+
+    <h1>AI Threat Analyzer</h1>
+
+    <form method="POST">
+
+        <textarea
+            name="message"
+            placeholder="Paste suspicious email, SMS, or message..."
+            required
+        ></textarea>
+
+        <button type="submit">
+            Analyze Threat
+        </button>
+
+    </form>
+
+    {% if result %}
+
+    <div class="result">
+
+        <h2>Threat Analysis Result</h2>
+
+        <h3>Risk Level:</h3>
+
+        <p>{{ result.risk }}</p>
+
+        <h3>Threat Score:</h3>
+
+        <p>{{ result.score }}/100</p>
+
+        <h3>Detected Indicators:</h3>
+
+        <ul>
+
+            {% for item in result.detected %}
+
+                <li>{{ item }}</li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+    {% endif %}
+
+</div>
+{% if report_path %}
+
+<a href="/{{ report_path }}" download>
+
+    <button>
+        Download Threat Report
+    </button>
+
+</a>
+
+{% endif %}
+</body>
+</html>

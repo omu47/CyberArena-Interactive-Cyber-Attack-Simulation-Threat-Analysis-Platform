@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Base64 Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Base64 Decoder Lab</h1>
+
+    <form method="POST">
+
+        <textarea
+            name="encoded_text"
+            placeholder="Paste Base64 encoded text..."
+            required
+        ></textarea>
+
+        <button type="submit">Analyze</button>
+
+    </form>
+
+    {% if decoded_text %}
+
+    <div class="result">
+        <h2>Decoded Output</h2>
+        <p>{{ decoded_text }}</p>
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>

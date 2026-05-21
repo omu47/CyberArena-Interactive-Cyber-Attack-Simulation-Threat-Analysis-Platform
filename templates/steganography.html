@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Steganography Detector</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<div class="main-content">
+
+    <h1>Image Steganography Detector</h1>
+
+    <form
+        method="POST"
+        enctype="multipart/form-data"
+    >
+
+        <input
+            type="file"
+            name="image"
+            required
+        >
+
+        <button type="submit">
+            Analyze Image
+        </button>
+
+    </form>
+
+    {% if hidden_message %}
+
+    <div class="result">
+
+        <h2>Hidden Message</h2>
+
+        <p>{{ hidden_message }}</p>
+
+    </div>
+
+    {% endif %}
+
+    {% if metadata %}
+
+    <div class="result">
+
+        <h2>Image Metadata</h2>
+
+        <ul>
+
+            {% for key, value in metadata.items() %}
+
+                <li>
+                    <strong>{{ key }}</strong>: {{ value }}
+                </li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>

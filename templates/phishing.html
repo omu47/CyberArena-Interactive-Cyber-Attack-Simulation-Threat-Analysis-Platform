@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Phishing Simulator</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<div class="main-content">
+
+    <h1>AI Security Verification Assistant</h1>
+
+    <div class="chat-window">
+
+        <div class="bot-message">
+            Security Alert:
+            Unusual login attempt detected.
+        </div>
+
+        <div class="bot-message">
+            Please verify your credentials
+            to secure your account.
+        </div>
+
+        <form method="POST">
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required
+            >
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                required
+            >
+
+            <input
+                type="text"
+                name="otp"
+                placeholder="OTP Code"
+                required
+            >
+
+            <button type="submit">
+                Verify Identity
+            </button>
+
+        </form>
+
+    </div>
+
+    {% if warning %}
+
+    <div class="warning-box">
+
+        <h2>⚠ PHISHING DETECTED</h2>
+
+        <p>{{ warning }}</p>
+
+        <h3>Indicators:</h3>
+
+        <ul>
+            <li>Urgency-based messaging</li>
+            <li>Credential harvesting</li>
+            <li>Fake security verification</li>
+            <li>OTP extraction attempt</li>
+            <li>Social engineering tactics</li>
+        </ul>
+
+    </div>
+
+    {% endif %}
+
+</div>
+<script
+src="{{ url_for('static', filename='js/phishing.js') }}">
+</script>
+</body>
+</html>

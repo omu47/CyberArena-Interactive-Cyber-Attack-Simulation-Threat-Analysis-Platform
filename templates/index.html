@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CyberArena</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+<a href="/phishing">Phishing Simulator</a>
+<a href="/steganography">Steganography Lab</a>
+<a href="/threat-map">Threat Map</a>
+<a href="/ai-analyzer">AI Threat Analyzer</a>
+<a href="/leaderboard">Leaderboard</a>
+<div class="sidebar">
+
+    <h2>CyberArena</h2>
+
+    <a href="/">Dashboard</a>
+    <a href="/base64">Base64 Lab</a>
+    <a href="/rsa">RSA Demo</a>
+
+</div>
+
+<div class="main-content">
+
+    <div class="topbar">
+
+        <h1>Threat Dashboard</h1>
+
+        <div class="status">
+            SYSTEM STATUS: SECURE
+        </div>
+
+    </div>
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <h3>Threats Detected</h3>
+            <p>128</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Encoded Payloads</h3>
+            <p>53</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Phishing Attempts</h3>
+            <p>19</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Security Score</h3>
+            <p>94%</p>
+        </div>
+
+    </div>
+
+    <div class="dashboard-grid">
+
+        <div class="terminal">
+
+            <h2>Live Threat Feed</h2>
+
+            <div id="logs">
+
+                <p>[INFO] Monitoring network traffic...</p>
+
+            </div>
+
+        </div>
+
+        <div class="attack-panel">
+
+            <h2>Recent Attack Activity</h2>
+
+            <ul>
+                <li>Base64 Payload Injection</li>
+                <li>Credential Phishing Attempt</li>
+                <li>Suspicious RSA Cipher</li>
+                <li>Steganographic Image Upload</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="stat-card">
+
+    <h3>User Rank</h3>
+
+    <p>
+        {% if current_user.is_authenticated %}
+            {{ current_user.rank }}
+        {% else %}
+            Guest
+        {% endif %}
+    </p>
+
+</div>
+<div class="stat-card">
+
+    <h3>XP Points</h3>
+
+    <p>
+        {% if current_user.is_authenticated %}
+            {{ current_user.xp }}
+        {% else %}
+            0
+        {% endif %}
+    </p>
+
+</div>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<canvas id="matrix"></canvas>
+<script
+src="{{ url_for('static', filename='js/matrix.js') }}">
+</script>
+</body>
+</html>
