@@ -117,8 +117,14 @@ Modern responsive interface with:
 
 ## Deployment
 - Docker
+  <img width="700" height="268" alt="{BE7AA45D-335B-4B04-9EF9-C64639BE95FC}" src="https://github.com/user-attachments/assets/0df60d10-f6cc-4d4e-af8c-37b4d3f99bb5" />
+
 - Render
+  <img width="678" height="315" alt="{A1D04339-5D48-4E4C-B370-87AD3299DF65}" src="https://github.com/user-attachments/assets/1c5e48b9-60b9-4c3b-917d-9138dbb3609b" />
+<img width="643" height="257" alt="image" src="https://github.com/user-attachments/assets/facab59d-ab3f-4982-babe-aa9649cdb44b" />
+
 - GitHub
+
 
 ---
 
